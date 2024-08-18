@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Tester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>WebSocket Tester</h1>
+            <div class="input-group">
+                <label for="wsUrl">WebSocket URL:</label>
+                <input type="text" id="wsUrl" placeholder="ws://yourserver.com:port">
+                <button onclick="connectWebSocket()">Reconnect</button>
+            </div>
+            <div class="input-group">
+                <label for="nameInput">Button Name:</label>
+                <input type="text" id="nameInput" placeholder="Button name">
+            </div>
+            <div class="input-group">
+                <label for="messageInput">Message:</label>
+                <input type="text" id="messageInput" placeholder="Message to send">
+                <button onclick="addButton()">Add Button</button>
+            </div>
+            <div class="input-group">
+                <label for="manualMessageBox">Manual Message:</label>
+                <input type="text" id="manualMessageBox" placeholder="Type your message here">
+                <button onclick="sendMessage(document.getElementById('manualMessageBox').value)">Send</button>
+            </div>
+            <div class="input-group">
+                <label for="receiveBox">Received messages:</label>
+                <textarea id="receiveBox" rows="10" cols="30" readonly></textarea>
+            </div>
+            <div id="status" class="status-disconnected">Disconnected</div>
+        </div>
+        <div class="right-panel">
+            <div id="buttonGrid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
